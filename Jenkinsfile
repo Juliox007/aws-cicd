@@ -12,6 +12,10 @@ pipeline {
             steps{
                 sh 'echo test'
             }
+        stage('git checkout'){
+            steps{
+                git branch: 'main', url: 'https://github.com/Juliox007/aws-cicd.git'
+            }
         }
         stage('code'){
             steps{
