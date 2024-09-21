@@ -9,6 +9,8 @@ pipeline {
 
         BRANCH_NAME = 'main'
         GIT_URL = 'https://github.com/Juliox007/aws-cicd.git'
+        IMAGE_TAG = 'awscicd'
+        IMAGE_VERSION = "${BUILD_NUMBER}"
    
     }
 
@@ -37,6 +39,7 @@ pipeline {
        stage('docker build'){
         steps{
             sh 'docker build -t awscicd .'
+            sh '"${IMAGE_TAG}:${IMAGE_VERSION}" .'
             sh 'docker images'
         }
        }
