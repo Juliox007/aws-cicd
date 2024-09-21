@@ -24,7 +24,7 @@ pipeline {
                 sh 'echo test'
             }
 
-
+        }
 
         stage('git checkout'){
             steps{
